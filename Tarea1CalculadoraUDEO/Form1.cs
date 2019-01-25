@@ -224,7 +224,7 @@ namespace Tarea1CalculadoraUDEO
                     PANTALLA.Text = resultado.ToString();
                     break;
                 case "-":
-                    resultado = Convert.ToDouble(valorInicial) - Convert.ToDouble(valorFinal);
+                    resultado = Convert.ToDouble(valorFinal) - Convert.ToDouble(valorInicial);
                     PANTALLA.Text = resultado.ToString();
                     break;
                 case "/":
@@ -256,49 +256,123 @@ namespace Tarea1CalculadoraUDEO
             switch (Convert.ToInt16(e.KeyChar))
             {
                 case 42:
-                    signoActual = ("*");
+                    signoActual = "*";
+
                     break;
                 case 43:
-                    signoActual = ("+");
+                    signoActual = "+";
+                    PANTALLA.Text = "";
                     break;
                 case 45:
-                    signoActual = (".");
+                    signoActual = ".";
                     break;
                 case 46:
-                    signoActual = ("-");
+                    signoActual ="-";
                     break;
                 case 47:
-                    signoActual = ("/");
+                    signoActual = "/";
                     break;
                 case 48:
-                    PANTALLA.Text = ("0");
+                    if ((signoActual != "") && (contadorCalculos == 0))
+                    {
+                        AgregarValorInicial("0");
+                    }
+                    else
+                    {
+                        agregarValorFinal("0");
+                    }
                     break;
+
                 case 49:
-                    PANTALLA.Text = ("1");
+                    if ((signoActual != "") && (contadorCalculos == 0))
+                    {
+                        AgregarValorInicial("1");
+                    }
+                    else
+                    {
+                        agregarValorFinal("1");
+                    }
                     break;
                 case 50:
-                    PANTALLA.Text = ("2");
+                    if ((signoActual != "") && (contadorCalculos == 0))
+                    {
+                        AgregarValorInicial("2");
+                    }
+                    else
+                    {
+                        agregarValorFinal("2");
+                    }
                     break;
                 case 51:
-                    PANTALLA.Text = ("3");
+                    if ((signoActual != "") && (contadorCalculos == 0))
+                    {
+                        AgregarValorInicial("3");
+                    }
+                    else
+                    {
+                        agregarValorFinal("3");
+                    }
                     break;
                 case 52:
-                    PANTALLA.Text = ("4");
+                    if ((signoActual != "") && (contadorCalculos == 0))
+                    {
+                        AgregarValorInicial("4");
+                    }
+                    else
+                    {
+                        agregarValorFinal("4");
+                    }
                     break;
                 case 53:
-                    PANTALLA.Text = ("5");
+                    if ((signoActual != "") && (contadorCalculos == 0))
+                    {
+                        AgregarValorInicial("5");
+                    }
+                    else
+                    {
+                        agregarValorFinal("5");
+                    }
                     break;
                 case 54:
-                    PANTALLA.Text = ("6");
+                    if ((signoActual != "") && (contadorCalculos == 0))
+                    {
+                        AgregarValorInicial("6");
+                    }
+                    else
+                    {
+                        agregarValorFinal("6");
+                    }
                     break;
                 case 55:
-                    PANTALLA.Text = ("7");
+                    if ((signoActual != "") && (contadorCalculos == 0))
+                    {
+                        AgregarValorInicial("7");
+                    }
+                    else
+                    {
+                        agregarValorFinal("7");
+                    }
                     break;
                 case 56:
-                    PANTALLA.Text = ("8");
+                    if ((signoActual != "") && (contadorCalculos == 0))
+                    {
+                        AgregarValorInicial("8");
+                    }
+                    else
+                    {
+                        agregarValorFinal("8");
+                    }
+
                     break;
                 case 57:
-                    PANTALLA.Text = ("9");
+                    if ((signoActual != "") && (contadorCalculos == 0))
+                    {
+                        AgregarValorInicial("9");
+                    }
+                    else
+                    {
+                        agregarValorFinal("9");
+                    }
                     break;
 
 
