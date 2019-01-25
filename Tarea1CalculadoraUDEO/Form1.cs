@@ -12,10 +12,7 @@ namespace Tarea1CalculadoraUDEO
 {
     public partial class Form1 : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
+
 
         // SE DECLARARON LAS VARIABLES DE USO PARA LAS OPERACIONES
         // SE DECLARARON PUBLICAS PARA QUE SE PUEDAN USAR EN TODO EL PROGRAMA
@@ -25,15 +22,12 @@ namespace Tarea1CalculadoraUDEO
         public string signoActual = "";
         public int contadorCalculos = 0;
 
-        // SE DECLARO UN METODO PARA REINICIAR LOS VALORES DE LA CALCULADORA
-
-        private void ReiniciarValores()
+        public Form1()
         {
-            signoActual = "";
-            valorInicial = "";
-            valorFinal = "";
-            contadorCalculos = 0;
+            InitializeComponent();
         }
+
+
 
         //limpiar pantalla
         private void btnC_Click_1(object sender, EventArgs e)
@@ -69,23 +63,7 @@ namespace Tarea1CalculadoraUDEO
 
         
 
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            switch(Convert.ToInt16(e.KeyChar))
-            {
-                case 48:
-                   PANTALLA.Text= ("0");
-                break;
-                case 49:
-                    PANTALLA.Text = ("1");
-                    break;
-                case 50:
-                    PANTALLA.Text = ("2");
-                    break;
-
-            }
-
-        }
+       
 
         private void btn1_Click(object sender, EventArgs e)
         {
@@ -259,6 +237,76 @@ namespace Tarea1CalculadoraUDEO
             signoActual = "";
             valorFinal = "";
             contadorCalculos += 1;
+        }
+
+
+        // SE DECLARO UN METODO PARA REINICIAR LOS VALORES DE LA CALCULADORA
+
+        private void ReiniciarValores()
+        {
+            signoActual = "";
+            valorInicial = "";
+            valorFinal = "";
+            contadorCalculos = 0;
+        }
+        //  SE DECLARO METODO PARA ACCIONAR TECLADO DE MAQUINA 
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            switch (Convert.ToInt16(e.KeyChar))
+            {
+                case 42:
+                    signoActual = ("*");
+                    break;
+                case 43:
+                    signoActual = ("+");
+                    break;
+                case 45:
+                    signoActual = (".");
+                    break;
+                case 46:
+                    signoActual = ("-");
+                    break;
+                case 47:
+                    signoActual = ("/");
+                    break;
+                case 48:
+                    PANTALLA.Text = ("0");
+                    break;
+                case 49:
+                    PANTALLA.Text = ("1");
+                    break;
+                case 50:
+                    PANTALLA.Text = ("2");
+                    break;
+                case 51:
+                    PANTALLA.Text = ("3");
+                    break;
+                case 52:
+                    PANTALLA.Text = ("4");
+                    break;
+                case 53:
+                    PANTALLA.Text = ("5");
+                    break;
+                case 54:
+                    PANTALLA.Text = ("6");
+                    break;
+                case 55:
+                    PANTALLA.Text = ("7");
+                    break;
+                case 56:
+                    PANTALLA.Text = ("8");
+                    break;
+                case 57:
+                    PANTALLA.Text = ("9");
+                    break;
+
+
+
+
+
+            }
+
         }
     }
        
