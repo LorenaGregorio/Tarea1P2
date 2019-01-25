@@ -21,6 +21,7 @@ namespace Tarea1CalculadoraUDEO
         public string valorFinal = "";
         public string signoActual = "";
         public int contadorCalculos = 0;
+        public bool punto = true;
 
         public Form1()
         {
@@ -75,6 +76,7 @@ namespace Tarea1CalculadoraUDEO
             {
                 agregarValorFinal("1");
             }
+            btnigual.Focus();
         }
 
         private void btn2_Click(object sender, EventArgs e)
@@ -87,6 +89,7 @@ namespace Tarea1CalculadoraUDEO
             {
                 agregarValorFinal("2");
             }
+            btnigual.Focus();
         }
 
         private void btn3_Click(object sender, EventArgs e)
@@ -189,6 +192,7 @@ namespace Tarea1CalculadoraUDEO
         {
             signoActual = "+";
             PANTALLA.Text = "";
+            btnp.Focus();
         }
 
         private void btnmen_Click(object sender, EventArgs e)
@@ -218,6 +222,8 @@ namespace Tarea1CalculadoraUDEO
                 case "+":
                     resultado = Convert.ToDouble(valorInicial) + Convert.ToDouble(valorFinal);
                     PANTALLA.Text = resultado.ToString();
+                    btnigual.Focus();
+              
                     break;
                 case "*":
                     resultado = Convert.ToDouble(valorInicial) * Convert.ToDouble(valorFinal);
@@ -228,7 +234,7 @@ namespace Tarea1CalculadoraUDEO
                     PANTALLA.Text = resultado.ToString();
                     break;
                 case "/":
-                    resultado = Convert.ToDouble(valorInicial) / Convert.ToDouble(valorFinal);
+                    resultado = Convert.ToDouble(valorFinal) / Convert.ToDouble(valorInicial);
                     PANTALLA.Text = resultado.ToString();
                     break;
             }
@@ -255,22 +261,38 @@ namespace Tarea1CalculadoraUDEO
         {
             switch (Convert.ToInt16(e.KeyChar))
             {
+                case 46:
+                    if ((signoActual != "") && (punto == true))
+                    {
+                        AgregarValorInicial(".");
+                    }
+                    else
+                    {
+                        agregarValorFinal(".");
+                    }
+                    btnigual.Focus();
+                    break;
+
                 case 42:
                     signoActual = "*";
-
+                    PANTALLA.Text = "";
+                    btnigual.Focus();
                     break;
                 case 43:
                     signoActual = "+";
                     PANTALLA.Text = "";
+                    btnigual.Focus();
                     break;
                 case 45:
-                    signoActual = ".";
+                    signoActual = "-";
+                    PANTALLA.Text = "";
+                    btnigual.Focus();
                     break;
-                case 46:
-                    signoActual ="-";
-                    break;
+
                 case 47:
                     signoActual = "/";
+                    PANTALLA.Text = "";
+                    btnigual.Focus();
                     break;
                 case 48:
                     if ((signoActual != "") && (contadorCalculos == 0))
@@ -281,6 +303,7 @@ namespace Tarea1CalculadoraUDEO
                     {
                         agregarValorFinal("0");
                     }
+                    btnigual.Focus();
                     break;
 
                 case 49:
@@ -292,6 +315,7 @@ namespace Tarea1CalculadoraUDEO
                     {
                         agregarValorFinal("1");
                     }
+                    btnigual.Focus();
                     break;
                 case 50:
                     if ((signoActual != "") && (contadorCalculos == 0))
@@ -302,6 +326,7 @@ namespace Tarea1CalculadoraUDEO
                     {
                         agregarValorFinal("2");
                     }
+                    btnigual.Focus();
                     break;
                 case 51:
                     if ((signoActual != "") && (contadorCalculos == 0))
@@ -312,6 +337,7 @@ namespace Tarea1CalculadoraUDEO
                     {
                         agregarValorFinal("3");
                     }
+                    btnigual.Focus();
                     break;
                 case 52:
                     if ((signoActual != "") && (contadorCalculos == 0))
@@ -322,6 +348,7 @@ namespace Tarea1CalculadoraUDEO
                     {
                         agregarValorFinal("4");
                     }
+                    btnigual.Focus();
                     break;
                 case 53:
                     if ((signoActual != "") && (contadorCalculos == 0))
@@ -332,6 +359,7 @@ namespace Tarea1CalculadoraUDEO
                     {
                         agregarValorFinal("5");
                     }
+                    btnigual.Focus();
                     break;
                 case 54:
                     if ((signoActual != "") && (contadorCalculos == 0))
@@ -342,6 +370,7 @@ namespace Tarea1CalculadoraUDEO
                     {
                         agregarValorFinal("6");
                     }
+                    btnigual.Focus();
                     break;
                 case 55:
                     if ((signoActual != "") && (contadorCalculos == 0))
@@ -352,6 +381,7 @@ namespace Tarea1CalculadoraUDEO
                     {
                         agregarValorFinal("7");
                     }
+                    btnigual.Focus();
                     break;
                 case 56:
                     if ((signoActual != "") && (contadorCalculos == 0))
@@ -362,7 +392,7 @@ namespace Tarea1CalculadoraUDEO
                     {
                         agregarValorFinal("8");
                     }
-
+                    btnigual.Focus();
                     break;
                 case 57:
                     if ((signoActual != "") && (contadorCalculos == 0))
@@ -373,6 +403,7 @@ namespace Tarea1CalculadoraUDEO
                     {
                         agregarValorFinal("9");
                     }
+                    btnigual.Focus();
                     break;
 
 
@@ -381,6 +412,24 @@ namespace Tarea1CalculadoraUDEO
 
             }
 
+        }
+
+        private void btnp_Click(object sender, EventArgs e)
+        {
+
+            if ((signoActual != "") && (punto == true))
+            {
+                AgregarValorInicial(".");
+            }
+            else
+            {
+                agregarValorFinal(".");
+            }
+            btnigual.Focus();
+
+
+
+           
         }
     }
        

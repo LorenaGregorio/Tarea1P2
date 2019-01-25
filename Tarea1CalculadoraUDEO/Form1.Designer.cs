@@ -112,6 +112,7 @@
             this.btnp.TabIndex = 29;
             this.btnp.Text = ".";
             this.btnp.UseVisualStyleBackColor = true;
+            this.btnp.Click += new System.EventHandler(this.btnp_Click);
             // 
             // btn0
             // 
